@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
+import { FaTrashAlt } from 'react-icons/fa';
 
 class EducationDisplay extends Component {
   constructor(props) {
     super(props);
     this.editInfo = this.editInfo.bind(this);
     this.showForm = this.showForm.bind(this);
+    this.deleteRecord = this.deleteRecord.bind(this);
   }
 
   showForm() {
@@ -15,16 +17,32 @@ class EducationDisplay extends Component {
     this.showForm();
   }
 
+  deleteRecord(e) {
+    let confirmation = window.confirm(
+      'Are you sure you want to delete this record?'
+    );
+
+    if (confirmation) {
+      this.props.removeRecord(e.target.dataset.id);
+    }
+  }
+
   render() {
     const listItems = this.props.data.map((item) => (
       <div className='edu-item' key={item.id}>
-        <h4>{item.institution}</h4>
-        <p>
-          From: {item.from} Until:{item.until}
-        </p>
-        <p>Qualifications:</p>
-        <p>{item.qualifications}</p>
-        <div className='delete'>Remove</div>
+        <div>
+          <h4>{item.institution}</h4>
+          <p>
+            From: {item.from} Until:{item.until}
+          </p>
+          <p>Qualifications:</p>
+          <p>{item.qualifications}</p>
+        </div>
+        <div>
+          <div onClick={this.deleteRecord} data-id={item.id} className='delete'>
+            <FaTrashAlt pointer-events='none' />
+          </div>
+        </div>
       </div>
     ));
     return (

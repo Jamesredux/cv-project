@@ -109,6 +109,8 @@ h4 {
 }
 .edu-item {
   margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
 }
 
 .edu-item > * {
@@ -158,4 +160,15 @@ button:hover {
   height: 30px;
   font-size: 1rem;
   align-self: flex-end;
+}
+
+.delete {
+  width: 40px;
+  height: 40px;
+  font-size: 1.2rem;
+  color: #3f3f3f;
+}
+
+.delete:hover {
+  color: black;
 }
