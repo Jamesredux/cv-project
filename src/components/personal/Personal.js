@@ -22,30 +22,13 @@ class Personal extends Component {
       address: address,
       telephone: telephone,
       email: email,
-      editSent: false,
     });
   }
 
-  // editData(oldData) {
-  //   const { name, address, telephone, email } = oldData;
-  //   this.setState({
-  //     name: name,
-  //     address: address,
-  //     telephone: telephone,
-  //     email: email,
-  //     editSent: true,
-  //   });
-  // }
-
-  //Personal statement
   render() {
     return (
       <div className='personal'>
-        <PersonalForm
-          submitForm={this.handleSubmit}
-          data={this.state}
-          useProps={this.state.editSent}
-        />
+        <PersonalForm submitForm={this.handleSubmit} />
         <PersonalDisplay data={this.state} editData={this.editData} />
       </div>
     );

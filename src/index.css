@@ -19,16 +19,13 @@ h3 {
 
 h4 {
   font-size: 1.2rem;
+  font-weight: 800;
 }
 
 .cv-container {
   border: 1px solid red;
-  width: 800px;
+  width: 900px;
   margin: 0 auto;
-}
-
-.form-container {
-  border: 1px solid green;
 }
 
 .header {
@@ -40,9 +37,8 @@ h4 {
 }
 
 .personal {
-  border: 2px solid yellow;
   margin-top: 30px;
-  min-height: 400px;
+  min-height: 270px;
 }
 
 .pers-form {
@@ -59,24 +55,17 @@ h4 {
   background-color: #d1cfd0;
 }
 
-.pers-form-section {
+.form-section {
   max-width: 85%;
+
   padding: 5px;
   display: flex;
   justify-content: space-between;
-}
-.display-container {
-  border: 1px solid blue;
 }
 
 .pers-display {
   transition: margin-left 0.5s;
   margin-left: 400px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  border-bottom: 1px solid gray;
-  padding: 20px;
   /* height: 400px; */
 }
 
@@ -84,11 +73,60 @@ h4 {
   padding-bottom: 4px;
 }
 
+.pers-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid gray;
+  margin: 0 80px;
+}
+
+.edu-container {
+}
+
+.edu-form {
+  position: fixed;
+  z-index: 1;
+  overflow-x: hidden;
+  transition: 0.5s;
+  width: 400px;
+  box-sizing: border-box;
+  border-radius: 7px;
+  margin-bottom: 10px;
+  background-color: #d1cfd0;
+}
+
+.edu-display {
+  transition: margin-left 0.5s;
+  margin-left: 400px;
+}
+
+.edu-div {
+  margin: 0 80px;
+  display: flex;
+  flex-direction: column;
+}
+.edu-item {
+  margin-bottom: 20px;
+}
+
+.edu-item > * {
+  padding: 5px;
+}
+
+#add-education {
+  margin: 10px;
+  width: 180px;
+  font-size: 0.8rem;
+  align-self: flex-end;
+}
+
 /* general button */
 
 button {
-  width: 120px;
-  height: 40px;
+  width: 100px;
+  height: 30px;
   font-size: 1.3rem;
 }
 

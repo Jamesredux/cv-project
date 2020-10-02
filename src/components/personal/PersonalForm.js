@@ -11,7 +11,6 @@ class PersonalForm extends Component {
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
     this.hideForm = this.hideForm.bind(this);
   }
 
@@ -22,7 +21,6 @@ class PersonalForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.submitForm(this.state);
-    // this.setState({ name: '', address: '', telephone: '', email: '' });
     this.hideForm();
   }
 
@@ -43,7 +41,7 @@ class PersonalForm extends Component {
         </div>
 
         <form onSubmit={this.handleSubmit}>
-          <div className='pers-form-section'>
+          <div className='form-section'>
             <label>Name:</label>
             <input
               type='text'
@@ -53,7 +51,7 @@ class PersonalForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className='pers-form-section'>
+          <div className='form-section'>
             <label>Address:</label>
             <input
               type='text'
@@ -62,7 +60,7 @@ class PersonalForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className='pers-form-section'>
+          <div className='form-section'>
             <label>Telephone:</label>
             <input
               type='tel'
@@ -72,7 +70,7 @@ class PersonalForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className='pers-form-section'>
+          <div className='form-section'>
             <label htmlFor=''>Email:</label>
             <input
               type='email'
@@ -82,7 +80,7 @@ class PersonalForm extends Component {
               onChange={this.handleChange}
             />
           </div>
-          <div className='pers-form-section'>
+          <div className='form-section'>
             <label htmlFor=''></label>
             <button type='submit'>submit</button>
           </div>

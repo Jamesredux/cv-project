@@ -23,25 +23,29 @@ class PersonalDisplay extends Component {
       const { name, address, telephone, email } = this.props.data;
       return (
         <div className='pers-display' id='personal-display'>
-          <h3>{name}</h3>
-          <p>{address}</p>
-          <p>{telephone}</p>
-          <p>{email}</p>
-          <button className='edit-button' onClick={this.editInfo}>
-            Edit
-          </button>
+          <div className='pers-div'>
+            <h3>{name}</h3>
+            <p>{address}</p>
+            <p>{telephone}</p>
+            <p>{email}</p>
+            <button className='edit-button' onClick={this.editInfo}>
+              Edit
+            </button>
+          </div>
         </div>
       );
     } else {
       return (
         <div className='pers-display' id='personal-display'>
-          <h3>James McCann</h3>
-          <p>12 Broad Road</p>
-          <p>0112 434 543</p>
-          <p>jamesmddded@gmail.com</p>
-          <button className='edit-button' onClick={this.editInfo}>
-            edit
-          </button>
+          <div className='pers-div'>
+            <h3>James McCann</h3>
+            <p>12 Broad Road</p>
+            <p>0112 434 543</p>
+            <p>jamesmddded@gmail.com</p>
+            <button className='edit-button' onClick={this.editInfo}>
+              edit
+            </button>
+          </div>
         </div>
       );
     }
