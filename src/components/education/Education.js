@@ -9,17 +9,17 @@ class Education extends Component {
       records: [
         {
           id: '33',
-          institution: 'the school',
-          from: '1987',
-          until: '1992',
-          qualifications: 'loads',
+          institution: 'Example University',
+          from: '2002',
+          until: '2006',
+          qualifications: 'BA(Hons) Maths and French',
         },
         {
           id: '34',
-          institution: 'the uni',
-          from: '1993',
-          until: '1997',
-          qualifications: 'loads more',
+          institution: 'Example School',
+          from: '1995',
+          until: '2002',
+          qualifications: 'A Levels: English (A) Maths (B) Economics (B)',
         },
       ],
     };
@@ -28,21 +28,15 @@ class Education extends Component {
     this.removeRecord = this.removeRecord.bind(this);
   }
 
-  //   create object that are the education history
-  // before display sort by date have option to delete
-  //  have option to add more
-
   addRecord(formData) {
     this.setState((prevState) => {
       return {
         records: [...prevState.records, formData],
       };
     });
-    //   formData will be object, add to state array
   }
 
   removeRecord(id) {
-    console.log(id);
     const newArray = [...this.state.records];
     const filteredArray = newArray.filter((item) => item.id !== id);
     this.setState({ records: filteredArray });

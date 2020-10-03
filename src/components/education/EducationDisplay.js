@@ -30,12 +30,15 @@ class EducationDisplay extends Component {
   render() {
     const listItems = this.props.data.map((item) => (
       <div className='edu-item' key={item.id}>
-        <div>
-          <h4>{item.institution}</h4>
-          <p>
-            From: {item.from} Until:{item.until}
-          </p>
-          <p>Qualifications:</p>
+        <div className='content'>
+          <div className='title'>
+            <h4 className='large-text'>{item.institution}</h4>
+            <p>
+              <span className='bold-text'>Dates Attended:</span> {item.from}
+              {' - '}
+              {item.until}
+            </p>
+          </div>
           <p>{item.qualifications}</p>
         </div>
         <div>
