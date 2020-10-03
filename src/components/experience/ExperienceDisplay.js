@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { FaTrashAlt } from 'react-icons/fa';
+import uniqid from 'uniqid';
 
-class EducationDisplay extends Component {
+class ExperienceDisplay extends Component {
   constructor(props) {
     super(props);
     this.editInfo = this.editInfo.bind(this);
@@ -10,8 +11,8 @@ class EducationDisplay extends Component {
   }
 
   showForm() {
-    document.getElementById('education-form').style.width = '400px';
-    document.getElementById('education-display').style.marginLeft = '400px';
+    document.getElementById('experience-form').style.width = '400px';
+    document.getElementById('experience-display').style.marginLeft = '400px';
   }
   editInfo() {
     this.showForm();
@@ -32,14 +33,20 @@ class EducationDisplay extends Component {
       <div className='edu-item' key={item.id}>
         <div className='content'>
           <div className='title'>
-            <h4 className='large-text'>{item.institution}</h4>
+            <h4 className='large-text'>{item.employer}</h4>
             <p>
-              <span className='bold-text'>Dates Attended:</span> {item.from}
+              {item.from}
               {' - '}
               {item.until}
             </p>
           </div>
-          <p>{item.qualifications}</p>
+          {item.duties && (
+            <ul>
+              {item.duties.map((duty) => (
+                <li key={uniqid()}>{duty}</li>
+              ))}
+            </ul>
+          )}
         </div>
         <div>
           <div onClick={this.deleteRecord} data-id={item.id} className='delete'>
@@ -49,12 +56,12 @@ class EducationDisplay extends Component {
       </div>
     ));
     return (
-      <div className='edu-display display-box' id='education-display'>
+      <div className='display-box' id='experience-display'>
         <div className='edu-div'>
-          <h3>Education</h3>
+          <h3>Experience</h3>
           <div>{listItems}</div>
-          <button id='add-education' onClick={this.showForm}>
-            Add Education
+          <button id='add-experience' onClick={this.showForm}>
+            Add Experience
           </button>
         </div>
       </div>
@@ -62,4 +69,4 @@ class EducationDisplay extends Component {
   }
 }
 
-export default EducationDisplay;
+export default ExperienceDisplay;

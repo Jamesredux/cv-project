@@ -1,29 +1,43 @@
 import React, { Component } from 'react';
 import uniqid from 'uniqid';
+import { CgAddR } from 'react-icons/cg';
 
-class EducationForm extends Component {
+class ExperienceForm extends Component {
   constructor() {
     super();
     this.state = {
       id: uniqid(),
-      institution: '',
+      employer: '',
       from: '',
       until: '',
-      qualifications: '',
+      duty: '',
+      duties: [],
     };
 
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.hideForm = this.hideForm.bind(this);
+    this.addDuty = this.addDuty.bind(this);
   }
 
   hideForm() {
-    document.getElementById('education-form').style.width = '0';
-    document.getElementById('education-display').style.marginLeft = '0';
+    document.getElementById('experience-form').style.width = '0';
+    document.getElementById('experience-display').style.marginLeft = '0';
   }
 
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
+  }
+
+  addDuty(e) {
+    if (this.state.duty === '') return;
+    // const newDuty = this.state.duty;
+    this.setState((prevState) => {
+      return {
+        duties: [...prevState.duties, this.state.duty],
+      };
+    });
+    this.setState({ duty: '' });
   }
 
   handleSubmit(e) {
@@ -31,18 +45,19 @@ class EducationForm extends Component {
     this.props.submitForm(this.state);
     this.setState({
       id: uniqid(),
-      institution: '',
+      employer: '',
       from: '',
       until: '',
-      qualifications: '',
+      duties: '',
+      duty: '',
     });
   }
 
   render() {
     return (
-      <div className='edu-form form-box' id='education-form'>
+      <div className=' form-box' id='experience-form'>
         <div className='title'>
-          <h3>Education</h3>
+          <h3>Experience</h3>
           <div className='close-box' onClick={this.hideForm}>
             X
           </div>
@@ -50,17 +65,17 @@ class EducationForm extends Component {
 
         <form onSubmit={this.handleSubmit}>
           <div className='form-section'>
-            <label>Institution Attended:</label>
+            <label>Employer:</label>
             <input
               type='text'
               required
-              name='institution'
-              value={this.state.institution}
+              name='employer'
+              value={this.state.employer}
               onChange={this.handleChange}
             />
           </div>
           <div className='form-section '>
-            <label>Dates Attended</label>
+            <label>Dates Employed</label>
           </div>
           <div className='form-section'>
             <label>From:</label>
@@ -81,13 +96,16 @@ class EducationForm extends Component {
             />
           </div>
           <div className='form-section'>
-            <label>Qualification Received:</label>
+            <label>Responsibilites and Achievments:</label>
             <input
               type='text'
-              name='qualifications'
-              value={this.state.qualifications}
+              name='duty'
+              value={this.state.duty}
               onChange={this.handleChange}
             />
+            <div className='add-record' onClick={this.addDuty}>
+              <CgAddR pointerEvents='none' />
+            </div>
           </div>
 
           <div className='form-section'>
@@ -100,4 +118,4 @@ class EducationForm extends Component {
   }
 }
 
-export default EducationForm;
+export default ExperienceForm;

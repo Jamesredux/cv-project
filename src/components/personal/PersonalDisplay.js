@@ -36,7 +36,7 @@ class PersonalDisplay extends Component {
       );
     } else {
       return (
-        <div className='pers-display' id='personal-display'>
+        <div className='pers-display display-box' id='personal-display'>
           <div className='pers-div'>
             <h3>James McCann</h3>
             <p>12 Broad Road</p>

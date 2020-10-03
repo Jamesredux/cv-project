@@ -32,7 +32,7 @@ class PersonalForm extends Component {
   //Personal statement
   render() {
     return (
-      <div className='pers-form' id='personal-form'>
+      <div className='pers-form form-box' id='personal-form'>
         <div className='title'>
           <h3>Personal Information</h3>
           <div className='close-box' onClick={this.hideForm}>

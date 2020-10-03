@@ -20,6 +20,11 @@ h4 {
   font-weight: 800;
 }
 
+ul {
+  list-style-type: disc;
+  list-style-position: inside;
+}
+
 .bold-text {
   font-weight: 800;
 }
@@ -29,8 +34,9 @@ h4 {
 }
 
 .cv-container {
-  border: 1px solid red;
+  border: 1px solid gray;
   width: 900px;
+  /* height: 2000px; */
   margin: 0 auto;
 }
 
@@ -38,40 +44,39 @@ h4 {
   padding: 30px;
 }
 
-.header h1 {
-  margin-bottom: 10px;
-}
-
 .personal {
   margin-top: 30px;
   min-height: 270px;
 }
 
-.pers-form {
-  position: fixed;
+.form-box {
+  position: absolute;
   z-index: 1;
   overflow-x: hidden;
   transition: 0.5s;
   width: 400px;
-
-  box-sizing: border-box;
-
-  border-radius: 7px;
-  margin-bottom: 10px;
+  /* box-sizing: border-box; */
   background-color: #d1cfd0;
+  border-radius: 7px;
+}
+
+.display-box {
+  transition: margin-left 0.5s;
+  margin-left: 400px;
+}
+
+.pers-form {
+  margin-bottom: 10px;
 }
 
 .form-section {
   max-width: 85%;
-
   padding: 5px;
   display: flex;
   justify-content: space-between;
 }
 
 .pers-display {
-  transition: margin-left 0.5s;
-  margin-left: 400px;
   /* height: 400px; */
 }
 
@@ -88,24 +93,15 @@ h4 {
   margin: 0 80px;
 }
 
-.edu-container {
+.educ-container {
+  margin-bottom: 30px;
 }
 
 .edu-form {
-  position: fixed;
-  z-index: 1;
-  overflow-x: hidden;
-  transition: 0.5s;
-  width: 400px;
-  box-sizing: border-box;
-  border-radius: 7px;
   margin-bottom: 10px;
-  background-color: #d1cfd0;
 }
 
 .edu-display {
-  transition: margin-left 0.5s;
-  margin-left: 400px;
 }
 
 .edu-div {
@@ -130,7 +126,8 @@ h4 {
 .content > * {
   padding-bottom: 5px;
 }
-#add-education {
+#add-education,
+#add-experience {
   margin: 10px;
   width: 180px;
   font-size: 0.8rem;
@@ -175,13 +172,21 @@ button:hover {
   align-self: flex-end;
 }
 
-.delete {
+.delete,
+.add-record {
+  display: flex;
+  align-items: center;
   width: 40px;
   height: 40px;
   font-size: 1.2rem;
   color: #3f3f3f;
 }
 
-.delete:hover {
+.add-record {
+  font-size: 1.6rem;
+}
+
+.delete:hover,
+.add-record:hover {
   color: black;
 }

@@ -1,25 +1,25 @@
 import React, { Component } from 'react';
-import EducationForm from './EducationForm';
-import EducationDisplay from './EducationDisplay';
+import ExperienceForm from './ExperienceForm';
+import ExperienceDisplay from './ExperienceDisplay';
 
-class Education extends Component {
+class Experience extends Component {
   constructor() {
     super();
     this.state = {
       records: [
         {
-          id: '33',
-          institution: 'Example University',
+          id: '35',
+          employer: 'Good Job Place',
           from: '2002',
           until: '2006',
-          qualifications: 'BA(Hons) Maths and French',
+          duties: ['This was the work I did', 'did some more'],
         },
         {
-          id: '34',
-          institution: 'Example School',
+          id: '36',
+          employer: 'Exactoplace PLC',
           from: '1995',
           until: '2002',
-          qualifications: 'A Levels: English (A) Maths (B) Economics (B)',
+          duties: ['Manager', 'Some other stuff'],
         },
       ],
     };
@@ -29,6 +29,11 @@ class Education extends Component {
   }
 
   addRecord(formData) {
+    if (formData.duty !== '') {
+      formData.duties.push(formData.duty);
+      formData.duty = '';
+    }
+
     this.setState((prevState) => {
       return {
         records: [...prevState.records, formData],
@@ -42,11 +47,12 @@ class Education extends Component {
     this.setState({ records: filteredArray });
   }
 
+  //   rename educ-container
   render() {
     return (
       <div className='educ-container'>
-        <EducationForm submitForm={this.addRecord} />
-        <EducationDisplay
+        <ExperienceForm submitForm={this.addRecord} />
+        <ExperienceDisplay
           data={this.state.records}
           removeRecord={this.removeRecord}
         />
@@ -55,4 +61,4 @@ class Education extends Component {
   }
 }
 
-export default Education;
+export default Experience;

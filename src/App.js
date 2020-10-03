@@ -3,6 +3,7 @@ import Form from './components/Form';
 import Display from './components/Display';
 import Education from './components/education/Education';
 import Personal from './components/personal/Personal';
+import Experience from './components/experience/Experience';
 
 class App extends Component {
   constructor(props) {
@@ -19,6 +20,7 @@ class App extends Component {
         <Personal />
 
         <Education />
+        <Experience />
       </div>
     );
   }
