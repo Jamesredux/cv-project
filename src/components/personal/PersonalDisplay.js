@@ -9,7 +9,7 @@ class PersonalDisplay extends Component {
   }
 
   editInfo() {
-    // this.props.editData(this.props.data);
+    this.props.editData();
     this.showForm();
   }
 

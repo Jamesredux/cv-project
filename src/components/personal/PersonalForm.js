@@ -14,6 +14,19 @@ class PersonalForm extends Component {
     this.hideForm = this.hideForm.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.data.edit) {
+      const { name, address, telephone, email } = this.props.data;
+      this.setState({
+        name: name,
+        address: address,
+        telephone: telephone,
+        email: email,
+      });
+      this.props.editDone();
+    }
+  }
+
   handleChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
@@ -21,6 +34,12 @@ class PersonalForm extends Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.submitForm(this.state);
+    this.setState({
+      name: '',
+      address: '',
+      telephone: '',
+      email: '',
+    });
     this.hideForm();
   }
 

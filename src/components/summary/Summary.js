@@ -7,10 +7,12 @@ class Summary extends Component {
     super();
     this.state = {
       text: 'Add Some Text here',
+      edit: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.removeRecord = this.removeRecord.bind(this);
+    this.editInfo = this.editInfo.bind(this);
+    this.cancelEdit = this.cancelEdit.bind(this);
   }
 
   handleSubmit(formData) {
@@ -19,18 +21,27 @@ class Summary extends Component {
     });
   }
 
-  removeRecord(id) {
-    const newArray = [...this.state.records];
-    const filteredArray = newArray.filter((item) => item.id !== id);
-    this.setState({ records: filteredArray });
+  editInfo(displayState) {
+    this.setState({
+      edit: true,
+    });
   }
 
-  //   rename educ-container
+  cancelEdit() {
+    this.setState({
+      edit: false,
+    });
+  }
+
   render() {
     return (
       <div className='summary-container'>
-        <SummaryForm submitForm={this.handleSubmit} />
-        <SummaryDisplay data={this.state} removeRecord={this.removeRecord} />
+        <SummaryForm
+          submitForm={this.handleSubmit}
+          data={this.state}
+          editDone={this.cancelEdit}
+        />
+        <SummaryDisplay data={this.state} editInfo={this.editInfo} />
       </div>
     );
   }

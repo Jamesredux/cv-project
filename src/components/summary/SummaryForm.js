@@ -21,6 +21,15 @@ class SummaryForm extends Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.data.edit) {
+      this.setState({
+        text: this.props.data.text,
+      });
+      this.props.editDone();
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.submitForm(this.state);
@@ -47,6 +56,7 @@ class SummaryForm extends Component {
               name='text'
               cols='30'
               rows='4'
+              maxLength='5000'
               value={this.state.text}
               onChange={this.handleChange}
             ></textarea>

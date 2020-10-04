@@ -10,9 +10,22 @@ class Personal extends Component {
       address: '',
       telephone: '',
       email: '',
+      edit: false,
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.cancelEdit = this.cancelEdit.bind(this);
+    this.editData = this.editData.bind(this);
+  }
+
+  editData() {
+    this.setState({ edit: true });
+  }
+
+  cancelEdit() {
+    this.setState({
+      edit: false,
+    });
   }
 
   handleSubmit(formData) {
@@ -28,7 +41,11 @@ class Personal extends Component {
   render() {
     return (
       <div className='personal'>
-        <PersonalForm submitForm={this.handleSubmit} />
+        <PersonalForm
+          submitForm={this.handleSubmit}
+          data={this.state}
+          editDone={this.cancelEdit}
+        />
         <PersonalDisplay data={this.state} editData={this.editData} />
       </div>
     );

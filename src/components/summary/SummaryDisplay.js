@@ -13,6 +13,7 @@ class SummaryDisplay extends Component {
   }
   editInfo() {
     this.showForm();
+    this.props.editInfo(this.props);
   }
 
   render() {
