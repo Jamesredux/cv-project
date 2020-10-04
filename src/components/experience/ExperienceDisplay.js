@@ -30,8 +30,8 @@ class ExperienceDisplay extends Component {
 
   render() {
     const listItems = this.props.data.map((item) => (
-      <div className='edu-item' key={item.id}>
-        <div className='content'>
+      <div className='display-item' key={item.id}>
+        <div className='display-item-container'>
           <div className='title'>
             <h4 className='large-text'>{item.employer}</h4>
             <p>
@@ -57,7 +57,7 @@ class ExperienceDisplay extends Component {
     ));
     return (
       <div className='display-box' id='experience-display'>
-        <div className='edu-div'>
+        <div className='content-div'>
           <h3>Experience</h3>
           <div>{listItems}</div>
           <button id='add-experience' onClick={this.showForm}>

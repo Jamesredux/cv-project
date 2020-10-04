@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import Form from './components/Form';
-import Display from './components/Display';
-import Education from './components/education/Education';
 import Personal from './components/personal/Personal';
+import Summary from './components/summary/Summary';
+import Education from './components/education/Education';
 import Experience from './components/experience/Experience';
 
 class App extends Component {
@@ -18,7 +17,7 @@ class App extends Component {
     return (
       <div className='cv-container'>
         <Personal />
-
+        <Summary />
         <Education />
         <Experience />
       </div>

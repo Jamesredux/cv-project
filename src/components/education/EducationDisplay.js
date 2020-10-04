@@ -29,8 +29,8 @@ class EducationDisplay extends Component {
 
   render() {
     const listItems = this.props.data.map((item) => (
-      <div className='edu-item' key={item.id}>
-        <div className='content'>
+      <div className='display-item' key={item.id}>
+        <div className='display-item-container'>
           <div className='title'>
             <h4 className='large-text'>{item.institution}</h4>
             <p>
@@ -49,8 +49,8 @@ class EducationDisplay extends Component {
       </div>
     ));
     return (
-      <div className='edu-display display-box' id='education-display'>
-        <div className='edu-div'>
+      <div className='display-box' id='education-display'>
+        <div className='content-div'>
           <h3>Education</h3>
           <div>{listItems}</div>
           <button id='add-education' onClick={this.showForm}>

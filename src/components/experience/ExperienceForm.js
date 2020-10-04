@@ -53,6 +53,8 @@ class ExperienceForm extends Component {
     });
   }
 
+  // add note on experience form to add multiple duties
+
   render() {
     return (
       <div className=' form-box' id='experience-form'>

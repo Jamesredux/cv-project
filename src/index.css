@@ -36,17 +36,22 @@ ul {
 .cv-container {
   border: 1px solid gray;
   width: 900px;
-  /* height: 2000px; */
   margin: 0 auto;
 }
 
-.header {
-  padding: 30px;
+.summary-container {
+  min-height: 200px;
 }
 
 .personal {
-  margin-top: 30px;
+  margin-top: 70px;
   min-height: 270px;
+}
+
+#personal-display > div {
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 2px solid gray;
 }
 
 .form-box {
@@ -65,6 +70,29 @@ ul {
   margin-left: 400px;
 }
 
+.display-item {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.display-item > * {
+  padding: 5px;
+}
+.display-item-container {
+  width: 90%;
+}
+
+.display-item-container > * {
+  padding-bottom: 5px;
+}
+
+.content-div {
+  display: flex;
+  flex-direction: column;
+  margin: 0 80px;
+}
+
 .pers-form {
   margin-bottom: 10px;
 }
@@ -76,23 +104,6 @@ ul {
   justify-content: space-between;
 }
 
-.pers-display {
-  /* height: 400px; */
-}
-
-.pers-display > * {
-  padding-bottom: 4px;
-}
-
-.pers-div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  border-bottom: 1px solid gray;
-  margin: 0 80px;
-}
-
 .educ-container {
   margin-bottom: 30px;
 }
@@ -101,31 +112,6 @@ ul {
   margin-bottom: 10px;
 }
 
-.edu-display {
-}
-
-.edu-div {
-  margin: 0 80px;
-  display: flex;
-  flex-direction: column;
-}
-.edu-item {
-  margin-bottom: 5px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.edu-item > * {
-  padding: 5px;
-}
-
-.content {
-  width: 90%;
-}
-
-.content > * {
-  padding-bottom: 5px;
-}
 #add-education,
 #add-experience {
   margin: 10px;
@@ -156,7 +142,6 @@ button:hover {
 
 .close-box {
   padding: 15px;
-
   font-size: 1.5rem;
 }
 
@@ -166,7 +151,8 @@ button:hover {
 }
 
 .edit-button {
-  width: 75px;
+  margin-top: 20px;
+  width: 70px;
   height: 30px;
   font-size: 1rem;
   align-self: flex-end;

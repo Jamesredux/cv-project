@@ -22,8 +22,8 @@ class PersonalDisplay extends Component {
     if (this.props.data.name) {
       const { name, address, telephone, email } = this.props.data;
       return (
-        <div className='pers-display' id='personal-display'>
-          <div className='pers-div'>
+        <div className='display-box' id='personal-display'>
+          <div className='content-div'>
             <h3>{name}</h3>
             <p>{address}</p>
             <p>{telephone}</p>
@@ -36,8 +36,8 @@ class PersonalDisplay extends Component {
       );
     } else {
       return (
-        <div className='pers-display display-box' id='personal-display'>
-          <div className='pers-div'>
+        <div className='display-box' id='personal-display'>
+          <div className='content-div'>
             <h3>James McCann</h3>
             <p>12 Broad Road</p>
             <p>0112 434 543</p>
