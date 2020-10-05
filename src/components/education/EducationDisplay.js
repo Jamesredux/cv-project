@@ -28,7 +28,6 @@ class EducationDisplay extends Component {
 
   editRecord(e) {
     this.props.requestEdit(e.target.dataset.id);
-
     this.showForm();
   }
 

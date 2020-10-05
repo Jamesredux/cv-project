@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaTrashAlt, FaRegEdit } from 'react-icons/fa';
 import uniqid from 'uniqid';
 
 class ExperienceDisplay extends Component {
   constructor(props) {
     super(props);
-    this.editInfo = this.editInfo.bind(this);
+    this.editRecord = this.editRecord.bind(this);
     this.showForm = this.showForm.bind(this);
     this.deleteRecord = this.deleteRecord.bind(this);
   }
@@ -14,7 +14,9 @@ class ExperienceDisplay extends Component {
     document.getElementById('experience-form').style.width = '400px';
     document.getElementById('experience-display').style.marginLeft = '400px';
   }
-  editInfo() {
+
+  editRecord(e) {
+    this.props.requestEdit(e.target.dataset.id);
     this.showForm();
   }
 
@@ -48,7 +50,10 @@ class ExperienceDisplay extends Component {
             </ul>
           )}
         </div>
-        <div>
+        <div className='buttons-div'>
+          <div onClick={this.editRecord} data-id={item.id} className='edit-div'>
+            <FaRegEdit pointerEvents='none' />
+          </div>
           <div onClick={this.deleteRecord} data-id={item.id} className='delete'>
             <FaTrashAlt pointerEvents='none' />
           </div>

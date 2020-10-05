@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import uniqid from 'uniqid';
 import { CgAddR } from 'react-icons/cg';
+import { FaTrashAlt, FaRegEdit } from 'react-icons/fa';
 
 class ExperienceForm extends Component {
   constructor() {
@@ -18,6 +19,27 @@ class ExperienceForm extends Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.hideForm = this.hideForm.bind(this);
     this.addDuty = this.addDuty.bind(this);
+    this.deleteDuty = this.deleteDuty.bind(this);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (this.props.editData.editActive) {
+      const {
+        id,
+        employer,
+        from,
+        until,
+        duties,
+      } = this.props.editData.selectedJob;
+      this.setState({
+        id: id,
+        employer: employer,
+        from: from,
+        until: until,
+        duties: duties,
+      });
+      this.props.editDone();
+    }
   }
 
   hideForm() {
@@ -40,6 +62,15 @@ class ExperienceForm extends Component {
     this.setState({ duty: '' });
   }
 
+  deleteDuty(e) {
+    const removeIndex = e.target.dataset.id;
+    this.setState((prevState) => ({
+      duties: prevState.duties.filter(
+        (duty, index) => index !== parseInt(removeIndex)
+      ),
+    }));
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     this.props.submitForm(this.state);
@@ -48,14 +79,22 @@ class ExperienceForm extends Component {
       employer: '',
       from: '',
       until: '',
-      duties: '',
       duty: '',
+      duties: [],
     });
   }
 
   // add note on experience form to add multiple duties
 
   render() {
+    const dutyList = this.state.duties.map((duty, index) => (
+      <div className='duty-item' key={uniqid()}>
+        <li>{duty}</li>
+        <div onClick={this.deleteDuty} data-id={index} className='delete'>
+          <FaTrashAlt pointerEvents='none' />
+        </div>
+      </div>
+    ));
     return (
       <div className=' form-box' id='experience-form'>
         <div className='title'>
@@ -98,10 +137,14 @@ class ExperienceForm extends Component {
             />
           </div>
           <div className='form-section'>
-            <label>Responsibilites and Achievments:</label>
+            <h2>Responsibilites and Achievments</h2>
+          </div>
+          <div className='form-section'>
+            <label>Add to create list:</label>
             <input
               type='text'
               name='duty'
+              maxLength='500'
               value={this.state.duty}
               onChange={this.handleChange}
             />
@@ -109,7 +152,9 @@ class ExperienceForm extends Component {
               <CgAddR pointerEvents='none' />
             </div>
           </div>
-
+          <div className='form-section'>
+            <ul className='job-details-list'>{dutyList}</ul>
+          </div>
           <div className='form-section'>
             <label htmlFor=''></label>
             <button type='submit'>submit</button>

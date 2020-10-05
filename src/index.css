@@ -109,6 +109,10 @@ ul {
   min-height: 270px;
 }
 
+.multi-container.experience {
+  min-height: 400px;
+}
+
 .edu-form {
   margin-bottom: 10px;
 }
@@ -119,6 +123,17 @@ ul {
   width: 180px;
   font-size: 0.8rem;
   align-self: flex-end;
+}
+
+.job-details-list {
+  margin-left: 75px;
+  width: 80%;
+}
+
+.duty-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* general button */
