@@ -17,6 +17,26 @@ class EducationForm extends Component {
     this.hideForm = this.hideForm.bind(this);
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.editData.editActive) {
+      const {
+        id,
+        institution,
+        from,
+        until,
+        qualifications,
+      } = this.props.editData.selectedRecord;
+      this.setState({
+        id: id,
+        institution: institution,
+        from: from,
+        until: until,
+        qualifications: qualifications,
+      });
+      this.props.editDone();
+    }
+  }
+
   hideForm() {
     document.getElementById('education-form').style.width = '0';
     document.getElementById('education-display').style.marginLeft = '0';
@@ -37,6 +57,8 @@ class EducationForm extends Component {
       qualifications: '',
     });
   }
+
+  populateEditForm() {}
 
   render() {
     return (

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaTrashAlt, FaRegEdit } from 'react-icons/fa';
 
 class EducationDisplay extends Component {
   constructor(props) {
@@ -7,15 +7,14 @@ class EducationDisplay extends Component {
     this.editInfo = this.editInfo.bind(this);
     this.showForm = this.showForm.bind(this);
     this.deleteRecord = this.deleteRecord.bind(this);
+    this.editRecord = this.editRecord.bind(this);
   }
 
   showForm() {
     document.getElementById('education-form').style.width = '400px';
     document.getElementById('education-display').style.marginLeft = '400px';
   }
-  editInfo() {
-    this.showForm();
-  }
+  editInfo() {}
 
   deleteRecord(e) {
     let confirmation = window.confirm(
@@ -25,6 +24,12 @@ class EducationDisplay extends Component {
     if (confirmation) {
       this.props.removeRecord(e.target.dataset.id);
     }
+  }
+
+  editRecord(e) {
+    this.props.requestEdit(e.target.dataset.id);
+
+    this.showForm();
   }
 
   render() {
@@ -41,7 +46,10 @@ class EducationDisplay extends Component {
           </div>
           <p>{item.qualifications}</p>
         </div>
-        <div>
+        <div className='buttons-div'>
+          <div onClick={this.editRecord} data-id={item.id} className='edit-div'>
+            <FaRegEdit pointerEvents='none' />
+          </div>
           <div onClick={this.deleteRecord} data-id={item.id} className='delete'>
             <FaTrashAlt pointerEvents='none' />
           </div>

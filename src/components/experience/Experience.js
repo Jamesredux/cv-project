@@ -50,7 +50,7 @@ class Experience extends Component {
   //   rename educ-container
   render() {
     return (
-      <div className='educ-container'>
+      <div className='multi-container'>
         <ExperienceForm submitForm={this.addRecord} />
         <ExperienceDisplay
           data={this.state.records}

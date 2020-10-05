@@ -104,8 +104,9 @@ ul {
   justify-content: space-between;
 }
 
-.educ-container {
+.multi-container {
   margin-bottom: 30px;
+  min-height: 270px;
 }
 
 .edu-form {
@@ -159,9 +160,11 @@ button:hover {
 }
 
 .delete,
+.edit-div,
 .add-record {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
   font-size: 1.2rem;
@@ -173,6 +176,11 @@ button:hover {
 }
 
 .delete:hover,
+.edit-div:hover,
 .add-record:hover {
   color: black;
+}
+
+.buttons-div {
+  display: flex;
 }
