@@ -20,6 +20,7 @@ class ExperienceForm extends Component {
     this.hideForm = this.hideForm.bind(this);
     this.addDuty = this.addDuty.bind(this);
     this.deleteDuty = this.deleteDuty.bind(this);
+    this.editDuty = this.editDuty.bind(this);
   }
 
   componentDidUpdate(prevProps) {
@@ -63,11 +64,22 @@ class ExperienceForm extends Component {
   }
 
   deleteDuty(e) {
-    const removeIndex = e.target.dataset.id;
+    const removeIndex = parseInt(e.target.dataset.id);
+    this.removeRecord(removeIndex);
+  }
+
+  editDuty(e) {
+    const selectId = parseInt(e.target.dataset.id);
+    const selectedDuty = this.state.duties.filter(
+      (duty, index) => index === selectId
+    );
+    this.setState({ duty: selectedDuty });
+    this.removeRecord(selectId);
+  }
+
+  removeRecord(removeIndex) {
     this.setState((prevState) => ({
-      duties: prevState.duties.filter(
-        (duty, index) => index !== parseInt(removeIndex)
-      ),
+      duties: prevState.duties.filter((duty, index) => index !== removeIndex),
     }));
   }
 
@@ -84,14 +96,17 @@ class ExperienceForm extends Component {
     });
   }
 
-  // add note on experience form to add multiple duties
-
   render() {
     const dutyList = this.state.duties.map((duty, index) => (
       <div className='duty-item' key={uniqid()}>
         <li>{duty}</li>
-        <div onClick={this.deleteDuty} data-id={index} className='delete'>
-          <FaTrashAlt pointerEvents='none' />
+        <div className='buttons-div'>
+          <div onClick={this.editDuty} data-id={index} className='edit-div'>
+            <FaRegEdit pointerEvents='none' />
+          </div>
+          <div onClick={this.deleteDuty} data-id={index} className='delete'>
+            <FaTrashAlt pointerEvents='none' />
+          </div>
         </div>
       </div>
     ));

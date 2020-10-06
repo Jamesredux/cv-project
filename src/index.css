@@ -60,8 +60,9 @@ ul {
   overflow-x: hidden;
   transition: 0.5s;
   width: 400px;
-  /* box-sizing: border-box; */
+
   background-color: #d1cfd0;
+
   border-radius: 7px;
 }
 
@@ -118,7 +119,8 @@ ul {
 }
 
 #add-education,
-#add-experience {
+#add-experience,
+#add-skill {
   margin: 10px;
   width: 180px;
   font-size: 0.8rem;
@@ -134,9 +136,26 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 5px;
+  border-left: 1px solid #9e9a9d;
+  border-right: 1px solid #9e9a9d;
+}
+.duty-item:nth-child(odd) {
+  background-color: #bdc1c1;
 }
 
-/* general button */
+.skill-item {
+  display: flex;
+}
+
+.skill-item-container {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  padding-left: 5px;
+}
+
+/* general buttons */
 
 button {
   width: 100px;

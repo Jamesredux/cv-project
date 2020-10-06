@@ -3,6 +3,7 @@ import Personal from './components/personal/Personal';
 import Summary from './components/summary/Summary';
 import Education from './components/education/Education';
 import Experience from './components/experience/Experience';
+import Skills from './components/skills/Skills';
 
 class App extends Component {
   constructor(props) {
@@ -20,6 +21,7 @@ class App extends Component {
         <Summary />
         <Education />
         <Experience />
+        <Skills />
       </div>
     );
   }
