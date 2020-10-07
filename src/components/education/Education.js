@@ -17,7 +17,7 @@ class Education extends Component {
         },
         {
           id: '34',
-          institution: 'Example School',
+          institution: 'Example High School',
           from: '1995',
           until: '2002',
           qualifications: 'A Levels: English (A) Maths (B) Economics (B)',

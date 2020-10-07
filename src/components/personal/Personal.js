@@ -10,6 +10,7 @@ class Personal extends Component {
       address: '',
       telephone: '',
       email: '',
+      website: '',
       edit: false,
     };
 
@@ -29,11 +30,12 @@ class Personal extends Component {
   }
 
   handleSubmit(formData) {
-    const { name, address, telephone, email } = formData;
+    const { name, address, telephone, website, email } = formData;
     this.setState({
       name: name,
       address: address,
       telephone: telephone,
+      website: website,
       email: email,
     });
   }

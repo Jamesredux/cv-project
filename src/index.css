@@ -34,9 +34,12 @@ ul {
 }
 
 .cv-container {
-  border: 1px solid gray;
   width: 900px;
-  margin: 0 auto;
+  margin: 20px auto;
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.75);
+  padding: 10px;
 }
 
 .summary-container {
@@ -44,8 +47,8 @@ ul {
 }
 
 .personal {
-  margin-top: 70px;
-  min-height: 270px;
+  margin-top: 40px;
+  min-height: 320px;
 }
 
 #personal-display > div {
@@ -60,10 +63,9 @@ ul {
   overflow-x: hidden;
   transition: 0.5s;
   width: 400px;
-
-  background-color: #d1cfd0;
-
-  border-radius: 7px;
+  background-color: #a8c7bb;
+  border-radius: 3px;
+  border-bottom: 2px solid gray;
 }
 
 .display-box {
@@ -100,7 +102,8 @@ ul {
 
 .form-section {
   max-width: 85%;
-  padding: 5px;
+  padding-left: 10px;
+  padding-bottom: 5px;
   display: flex;
   justify-content: space-between;
 }
@@ -141,7 +144,7 @@ ul {
   border-right: 1px solid #9e9a9d;
 }
 .duty-item:nth-child(odd) {
-  background-color: #bdc1c1;
+  background-color: #8fb7a8;
 }
 
 .skill-item {
@@ -173,6 +176,7 @@ button:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 5px;
 }
 
 .close-box {

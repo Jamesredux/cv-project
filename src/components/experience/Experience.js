@@ -8,18 +8,40 @@ class Experience extends Component {
     this.state = {
       records: [
         {
+          id: '12',
+          employer: 'Employer',
+          from: 'from',
+          until: 'until',
+          duties: [
+            'write you work history here',
+            'Add experience gained',
+            'Achievements',
+            'Add as many of these bullet points as you want!',
+            'Delete these example records with the trash symbol on the right',
+          ],
+        },
+        {
           id: '35',
-          employer: 'Good Job Place',
-          from: '2002',
-          until: '2006',
-          duties: ['This was the work I did', 'did some more'],
+          employer: 'Exampo Plc',
+          from: '2015',
+          until: 'Present',
+          duties: [
+            'Develop web apps with React, JS, HTML',
+            'Lead Quality Team',
+            'Increased web traffic by 354%',
+            'Planned and executed complete overhaul of code base',
+          ],
         },
         {
           id: '36',
-          employer: 'Exactoplace PLC',
-          from: '1995',
-          until: '2002',
-          duties: ['Manager', 'Some other stuff'],
+          employer: 'F-rinstance Web',
+          from: '2010',
+          until: '2015',
+          duties: [
+            'Created Web Apps to user specifications',
+            'Designed perfomance enhancement software for company',
+            'Fixed bugs in exsisting web apps',
+          ],
         },
       ],
       selectedJob: {},

@@ -7,6 +7,7 @@ class PersonalForm extends Component {
       name: '',
       address: '',
       telephone: '',
+      website: '',
       email: '',
     };
     this.handleChange = this.handleChange.bind(this);
@@ -16,11 +17,12 @@ class PersonalForm extends Component {
 
   componentDidUpdate(prevProps) {
     if (this.props.data.edit) {
-      const { name, address, telephone, email } = this.props.data;
+      const { name, address, telephone, website, email } = this.props.data;
       this.setState({
         name: name,
         address: address,
         telephone: telephone,
+        website: website,
         email: email,
       });
       this.props.editDone();
@@ -38,6 +40,7 @@ class PersonalForm extends Component {
       name: '',
       address: '',
       telephone: '',
+      website: '',
       email: '',
     });
     this.hideForm();
@@ -71,7 +74,7 @@ class PersonalForm extends Component {
             />
           </div>
           <div className='form-section'>
-            <label>Address:</label>
+            <label>Location:</label>
             <input
               type='text'
               name='address'
@@ -89,6 +92,17 @@ class PersonalForm extends Component {
               onChange={this.handleChange}
             />
           </div>
+
+          <div className='form-section'>
+            <label>Website:</label>
+            <input
+              type='text'
+              name='website'
+              value={this.state.website}
+              onChange={this.handleChange}
+            />
+          </div>
+
           <div className='form-section'>
             <label htmlFor=''>Email:</label>
             <input

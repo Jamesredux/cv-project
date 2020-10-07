@@ -6,7 +6,8 @@ class Summary extends Component {
   constructor() {
     super();
     this.state = {
-      text: 'Add Some Text here',
+      text:
+        'Write your summary here eg: ...Web developer with 2 years experience passionate about building and optimizing inovative web apps. I have substantial experience of testing, de-bugging and leading teams.',
       edit: false,
     };
 

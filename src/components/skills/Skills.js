@@ -12,14 +12,15 @@ class Skills extends Component {
           id: '334',
           text: 'Add as many skills or interests as you like',
         },
-        {
-          id: '344',
-          text: 'Fluent German and French',
-        },
+
         {
           id: '345',
           text:
-            'Tech used: HTML5; CSS3; JavaScript; SQL; Linux; Mac; iOS; React; Rails; Ruby;',
+            'Technical Skills: HTML5, CSS3, Git, Heroku, JavaScript, SQL, Linux, Mac, React, Angular, Node, Rails, Ruby.',
+        },
+        {
+          id: '344',
+          text: 'Fluent German and French',
         },
       ],
       selectedRecord: {},

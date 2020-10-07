@@ -18,9 +18,10 @@ class PersonalDisplay extends Component {
     document.getElementById('personal-display').style.marginLeft = '400px';
   }
 
+  // add website and link to it
   render() {
     if (this.props.data.name) {
-      const { name, address, telephone, email } = this.props.data;
+      const { name, address, telephone, email, website } = this.props.data;
       return (
         <div className='display-box' id='personal-display'>
           <div className='content-div'>
@@ -28,6 +29,7 @@ class PersonalDisplay extends Component {
             <p>{address}</p>
             <p>{telephone}</p>
             <p>{email}</p>
+            <a href={website}>website</a>
             <button className='edit-button' onClick={this.editInfo}>
               Edit
             </button>
@@ -38,10 +40,11 @@ class PersonalDisplay extends Component {
       return (
         <div className='display-box' id='personal-display'>
           <div className='content-div'>
-            <h3>James McCann</h3>
-            <p>12 Broad Road</p>
+            <h3>James Doe</h3>
+            <p>London, England</p>
             <p>0112 434 543</p>
-            <p>jamesmddded@gmail.com</p>
+            <a href='https://github.com/Jamesredux/'>github.com/Jamesredux</a>
+            <p>jamesdoe@example.com</p>
             <button className='edit-button' onClick={this.editInfo}>
               edit
             </button>
