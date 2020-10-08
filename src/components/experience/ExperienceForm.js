@@ -113,7 +113,7 @@ class ExperienceForm extends Component {
     return (
       <div className=' form-box' id='experience-form'>
         <div className='title'>
-          <h3>Experience</h3>
+          <h2>Experience</h2>
           <div className='close-box' onClick={this.hideForm}>
             X
           </div>

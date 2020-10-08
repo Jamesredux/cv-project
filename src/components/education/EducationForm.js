@@ -64,7 +64,7 @@ class EducationForm extends Component {
     return (
       <div className='edu-form form-box' id='education-form'>
         <div className='title'>
-          <h3>Education</h3>
+          <h2>Education</h2>
           <div className='close-box' onClick={this.hideForm}>
             X
           </div>

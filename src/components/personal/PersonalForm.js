@@ -56,7 +56,7 @@ class PersonalForm extends Component {
     return (
       <div className='pers-form form-box' id='personal-form'>
         <div className='title'>
-          <h3>Personal Information</h3>
+          <h2>Personal Information</h2>
           <div className='close-box' onClick={this.hideForm}>
             X
           </div>

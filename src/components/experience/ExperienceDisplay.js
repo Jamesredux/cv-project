@@ -63,7 +63,7 @@ class ExperienceDisplay extends Component {
     return (
       <div className='display-box' id='experience-display'>
         <div className='content-div'>
-          <h3>Experience</h3>
+          <h2>Experience</h2>
           <div>{listItems}</div>
           <button id='add-experience' onClick={this.showForm}>
             Add Experience

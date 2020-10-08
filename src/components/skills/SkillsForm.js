@@ -47,7 +47,7 @@ class SkillsForm extends Component {
     return (
       <div className=' form-box' id='skills-form'>
         <div className='title'>
-          <h3>Skills</h3>
+          <h2>Skills</h2>
           <div className='close-box' onClick={this.hideForm}>
             X
           </div>

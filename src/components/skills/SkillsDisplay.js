@@ -50,7 +50,7 @@ class SkillsDisplay extends Component {
     return (
       <div className='display-box' id='skills-display'>
         <div className='content-div'>
-          <h3>Skills</h3>
+          <h2>Skills</h2>
           <div>{listItems}</div>
           <button id='add-skill' onClick={this.showForm}>
             Add Skill

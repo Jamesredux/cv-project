@@ -58,7 +58,7 @@ class EducationDisplay extends Component {
     return (
       <div className='display-box' id='education-display'>
         <div className='content-div'>
-          <h3>Education</h3>
+          <h2>Education</h2>
           <div>{listItems}</div>
           <button id='add-education' onClick={this.showForm}>
             Add Education

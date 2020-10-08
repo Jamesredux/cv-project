@@ -21,15 +21,21 @@ class PersonalDisplay extends Component {
   // add website and link to it
   render() {
     if (this.props.data.name) {
-      const { name, address, telephone, email, website } = this.props.data;
+      const { name, address, telephone, website, email } = this.props.data;
       return (
         <div className='display-box' id='personal-display'>
           <div className='content-div'>
-            <h3>{name}</h3>
+            <h2>{name}</h2>
             <p>{address}</p>
             <p>{telephone}</p>
+            <a
+              href={'https://' + website}
+              target='_blank'
+              rel='noreferrer noopener'
+            >
+              {website}
+            </a>
             <p>{email}</p>
-            <a href={website}>website</a>
             <button className='edit-button' onClick={this.editInfo}>
               Edit
             </button>
@@ -40,10 +46,16 @@ class PersonalDisplay extends Component {
       return (
         <div className='display-box' id='personal-display'>
           <div className='content-div'>
-            <h3>James Doe</h3>
+            <h2>James Doe</h2>
             <p>London, England</p>
             <p>0112 434 543</p>
-            <a href='https://github.com/Jamesredux/'>github.com/Jamesredux</a>
+            <a
+              href='https://github.com/Jamesredux/'
+              target='_blank'
+              rel='noreferrer noopener'
+            >
+              github.com/Jamesredux
+            </a>
             <p>jamesdoe@example.com</p>
             <button className='edit-button' onClick={this.editInfo}>
               edit

@@ -43,7 +43,7 @@ class SummaryForm extends Component {
     return (
       <div className=' form-box' id='summary-form'>
         <div className='title'>
-          <h3>Summary</h3>
+          <h2>Summary</h2>
           <div className='close-box' onClick={this.hideForm}>
             X
           </div>

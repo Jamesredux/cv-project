@@ -20,7 +20,7 @@ class SummaryDisplay extends Component {
     return (
       <div className='display-box' id='summary-display'>
         <div className='content-div'>
-          <h3>Summary</h3>
+          <h2>Summary</h2>
           <p>{this.props.data.text}</p>
           <button className='edit-button' onClick={this.editInfo}>
             edit
